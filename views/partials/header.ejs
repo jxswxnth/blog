@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- For pages home,about,contact (present in folder) we can add css/styles.css
+    for these type of pages `static.("public")` can work
+
+    For dynamic pages using express routing like day-1,day-2 we need to add /css/styles.css
+    for these type of pages we preceed href with root(/). -->
+  </head>
+  <body>
+    <header>
+      <div class="nav">
+        <div class="logo">
+          <h2>BLOGGY</h2>
+        </div>
+        <div class="nav-items">
+          <a class="nav-item" href="/">HOME</a>
+          <a class="nav-item" href="/about">ABOUT US</a>
+          <a class="nav-item" href="/contact">CONTACT US</a>
+        </div>
+      </div>
+    </header>
+    <div class="all-posts">
+      <div class="home-compose">
+        <h1>
+          <%= typeof Heading === 'undefined' ? "undefined Heading" : Heading %>
+        </h1>
+        <a class="compose" href="/compose"><h1>✒️</h1></a>
+      </div>

@@ -1,0 +1,141 @@
+body{
+  min-height: 100vh;
+  overflow: hidden;
+  margin: 0 ;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  box-sizing: border-box;
+}
+
+p{
+  display: inline;
+}
+.logo{
+  margin: 0 0 0 150px;
+}
+
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f3e3e9;
+  padding: 5px 0 5px 0;
+}
+
+.nav-items{
+  display: flex;
+}
+
+.nav-item{
+  margin: 0 50px 0 0 ;
+  padding: 15px 0 ;
+  text-decoration: none;
+  color: black;
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
+}
+
+.nav-item:hover{
+  top: -5px;
+}
+
+.nav-item:last-of-type{
+  margin: 0 150px 0 0;
+}
+
+footer{
+  text-align: center;
+}
+
+.all-posts{
+  margin: 0 150px 0;
+}
+
+.home-compose{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.compose-headings{
+  margin-bottom: 7px;
+}
+
+.compose{
+  margin-right: 50px;
+  position: relative;
+  top: 0;
+  transition: top ease 0.4s;
+}
+
+.compose:hover{
+  top: -5px;
+}
+
+.title-input{
+  border: none;
+  border-bottom: 1px solid black;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.content-input{
+  width: 440px;
+  height: 200px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f3e3e9;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.post-button{
+  background-color: #f3e3e9;
+  border: 1px solid black;
+  padding: 10px 20px;
+  margin-top: 20px;
+  box-shadow: 3px 3px 0 0 black;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+  top: 0;
+  transition: 45deg ease 0.2s;
+}
+
+.post-button:hover{
+  box-shadow: 0 0 0 0;
+  top: 3px;
+  left: 3px;
+}
+
+hr{
+  border: 0;
+  border-bottom: 1px solid black;
+}
+
+.post-title{
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  position: relative;
+  right: 0;
+  transition: right ease 0.3s;
+}
+
+.post-title:hover{
+  right: -5px;
+}
+
+.read-more{
+  text-decoration: none;
+}
+
+.read-more:hover{
+  text-decoration: underline;
+}
