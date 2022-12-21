@@ -1,11 +1,20 @@
+require('dotenv').config();
 const express = require("express");
 const bodyParser = require("body-parser")
 const _ = require('lodash');
+const mongoose = require("mongoose");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
-let posts = [];
+mongoose.set({strictQuery: true});
+mongoose.connect("mongodb://localhost:27017/blogpostsDB");
+
+const postSchema = new mongoose.Schema({
+  title: String,
+  content: String
+})
+const Post = mongoose.model("Post",postSchema);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
@@ -13,8 +22,12 @@ app.use(express.static("public"));
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-  res.render('pages/home', {
-    listOfPosts : posts
+  Post.find({},(err,posts)=>{
+    if(!err){
+      res.render('pages/home', {
+        listOfPosts : posts
+      })
+    }
   })
 })
 
@@ -31,11 +44,11 @@ app.get('/compose',(req,res)=>{
 })
 
 app.post('/compose',(req,res)=>{
-  let post = {
+  const post = Post({
     title : req.body.titleOfPost,
-    content : req.body.textOfPost,
-  }
-  posts.push(post)
+    content : req.body.textOfPost
+  });
+  post.save();
   res.redirect('/');
 })
 
