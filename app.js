@@ -1,14 +1,15 @@
 require('dotenv').config();
 const express = require("express");
-const bodyParser = require("body-parser")
-const _ = require('lodash');
+const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 const app = express();
 const port = process.env.PORT;
 
+
+const url = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.otvpdjb.mongodb.net/${process.env.DB_DATABASE}`
 mongoose.set({strictQuery: true});
-mongoose.connect("mongodb://localhost:27017/blogpostsDB");
+mongoose.connect(url);
 
 const postSchema = new mongoose.Schema({
   title: String,
@@ -53,15 +54,13 @@ app.post('/compose',(req,res)=>{
 })
 
 app.get("/posts/:post",(req,res)=>{
-  var requestedTitle = _.kebabCase(req.params.post);
-  posts.forEach((currentPost)=>{
-    if(_.kebabCase(currentPost.title)===requestedTitle){
+  var requestedPostID = req.params.post;
+  Post.findOne({_id: requestedPostID},(err,currentPost)=>{
       res.render('pages/selectedPost',{
         selectedTitle : currentPost.title,
         selectedContent : currentPost.content,
-      })
-    }
-  })
+      });
+  });
 })
 
 app.listen(port, (req, res) => {

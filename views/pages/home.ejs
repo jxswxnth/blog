@@ -6,10 +6,10 @@
 
   <% listOfPosts.forEach((post)=>{ %>
     <hr />
-    <a class= "post-title" href="/posts/<%= post.title %>"><h1><%= post.title %></h1></a>
+    <a class= "post-title" href="/posts/<%= post._id %>"><h1><%= post.title %></h1></a>
     <% if(post.content.length > 100){ %>
       <p><%= post.content.slice(0, 100 - 1) %></p>
-      <p><a class="read-more" href="/posts/<%= post.title %>">...Read More</a></p>
+      <p><a class="read-more" href="/posts/<%= post._id %>">...Read More</a></p>
     <% } else { %>
       <p><%= post.content %></p>
     <% } %>
