@@ -1,20 +1,20 @@
-body{
+body {
   min-height: 100vh;
-  overflow: hidden;
-  margin: 0 ;
+  margin: 0;
   display: grid;
   grid-template-rows: auto 1fr auto;
   box-sizing: border-box;
 }
 
-p{
+p {
   display: inline;
 }
-.logo{
+
+.logo {
   margin: 0 0 0 150px;
 }
 
-.nav{
+.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,13 +22,13 @@ p{
   padding: 5px 0 5px 0;
 }
 
-.nav-items{
+.nav-items {
   display: flex;
 }
 
-.nav-item{
-  margin: 0 50px 0 0 ;
-  padding: 15px 0 ;
+.nav-item {
+  margin: 0 50px 0 0;
+  padding: 15px 0;
   text-decoration: none;
   color: black;
   position: relative;
@@ -36,44 +36,44 @@ p{
   transition: top ease 0.5s;
 }
 
-.nav-item:hover{
+.nav-item:hover {
   top: -5px;
 }
 
-.nav-item:last-of-type{
+.nav-item:last-of-type {
   margin: 0 150px 0 0;
 }
 
-footer{
+footer {
   text-align: center;
 }
 
-.all-posts{
+.all-posts {
   margin: 0 150px 0;
 }
 
-.home-compose{
+.home-compose {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.compose-headings{
+.compose-headings {
   margin-bottom: 7px;
 }
 
-.compose{
+.compose {
   margin-right: 50px;
   position: relative;
   top: 0;
   transition: top ease 0.4s;
 }
 
-.compose:hover{
+.compose:hover {
   top: -5px;
 }
 
-.title-input{
+.title-input {
   border: none;
   border-bottom: 1px solid black;
   font-weight: bold;
@@ -81,7 +81,7 @@ footer{
   font-family: "Times New Roman", Times, serif;
 }
 
-.content-input{
+.content-input {
   width: 440px;
   height: 200px;
   border: none;
@@ -90,11 +90,12 @@ footer{
   background-color: #f3e3e9;
 }
 
-textarea:focus, input:focus{
-    outline: none;
+textarea:focus,
+input:focus {
+  outline: none;
 }
 
-.post-button{
+.post-button {
   background-color: #f3e3e9;
   border: 1px solid black;
   padding: 10px 20px;
@@ -108,18 +109,18 @@ textarea:focus, input:focus{
   transition: 45deg ease 0.2s;
 }
 
-.post-button:hover{
+.post-button:hover {
   box-shadow: 0 0 0 0;
   top: 3px;
   left: 3px;
 }
 
-hr{
+hr {
   border: 0;
   border-bottom: 1px solid black;
 }
 
-.post-title{
+.post-title {
   text-decoration: none;
   color: black;
   cursor: pointer;
@@ -128,14 +129,14 @@ hr{
   transition: right ease 0.3s;
 }
 
-.post-title:hover{
+.post-title:hover {
   right: -5px;
 }
 
-.read-more{
+.read-more {
   text-decoration: none;
 }
 
-.read-more:hover{
+.read-more:hover {
   text-decoration: underline;
 }
